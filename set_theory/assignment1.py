@@ -12,4 +12,3 @@ def perfect(n):
     divisors that are both positive and less than n.
     '''
     return sum([x for x in positive_divisors(n) if x != n]) == n
-
