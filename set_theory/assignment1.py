@@ -1,5 +1,14 @@
 #!/usr/bin/env python
 
+def fatness_finder(n):
+    ''' Returns the **fat** numbers between 0 and n inclusive. '''
+    for x in range(0,n+1):
+        print x, fat(x)
+
+def fat(n):
+    ''' A number is **fat** if it has more than n/2 factors. '''
+    return len(positive_divisors(n)) > (n/2)
+
 def positive_divisors(n):
     ''' returns a list of positive divisors of n
     For example: 6 has four positive divisors [1,2,3,6]
