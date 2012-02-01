@@ -1,2 +1,5 @@
-from set_theory.assignment1 import *
+#1/usr/bin/env python
 
+import numpy
+
+from set_theory import operations
