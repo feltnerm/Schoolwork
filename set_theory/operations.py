@@ -1,6 +1,32 @@
 #!/usr/bin/env python
 
 import itertools
+import math
+from math import ceil, pi, e
+
+def prime(n):
+    ''' Returns true/false based on n's primality. '''
+    roof = ceil(pow(n, 0.5)) + 1
+    if n < 2:
+        return False
+    if n == 2:
+        return True
+    if not n & 1:
+        return False
+    for x in xrange(1, int(roof)):
+        if x % n == 0:
+            return False
+    return True
+
+def stirling(n, stdout=False):
+    ''' approximates n! using James Stirling's equation:
+
+    n! ~= sqrt(2*pi*n)*n^n*e^-n
+    '''
+    if stdout:
+        print 'sqrt(2*%d*%d) * %d^%d * %d^%d' %(pi, n, n, n, e, (n*-1))
+    return pow(2*pi*n, .5)*pow(n,n)*pow(e, (n*-1))
+    
 
 def cartesian_product(*args):
     ''' Returns a set of the Cartesian Product of some sets '''
