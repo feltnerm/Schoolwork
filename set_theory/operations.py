@@ -4,12 +4,22 @@ import itertools
 import math
 from math import ceil, pi, e
 
+def powerset(seq):
+    ''' returns all subsets of seq'''
+    if len(seq) <= 1:
+        yield seq
+        yield []
+    else:
+        for item in powerset(seq[1:]):
+            yield [seq[0]]+item
+            yield item
 
 def divisor(a,b):
     ''' Returns true if there exists an integer c 
     such that a = bc .
     '''
     return a % b == 0
+
 def prime(n):
     ''' Returns true/false based on n's primality. '''
     roof = ceil(pow(n, 0.5)) + 1
